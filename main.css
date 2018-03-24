@@ -1,0 +1,116 @@
+/*
+/*in case of small screen*/
+#wholepage{
+	background-color: white;
+	text-align: center;
+}
+
+#wholepage{
+	display:none;
+}
+
+
+
+@media screen and (max-width:600px){
+table{
+	table-layout:fixed;
+}
+.timings{
+	display:table-cell;
+	width:15px;
+	height:14px;
+	font-size:12.5px;
+}
+.timings2{
+	display:none;
+	width:15px;
+	height:14px;
+	font-size:12.5px;
+}
+.cellz{
+	display:none;
+	width:10px;
+	height:12px;
+	font-size:11px;
+}
+.daycell{
+	width:10px;
+	height:14px;
+	font-size:12.5px;
+}
+.cell2{
+	width:10px;
+	height:14px;
+	font-size:12.5px;
+}
+.active{
+	background-color:yellow;
+}
+.lunchcell{
+	display:table-cell;
+	width:15px;
+	height:14px;
+	font-size:12.5px;
+}
+.cell{
+	display:table-cell;
+	width:10px;
+	height:12px;
+	font-size:11px;
+}
+.toggle{
+	display:block;
+}
+}
+@media screen and (min-width:600px){
+table{
+	table-layout:fixed;
+}
+.active{
+	background-color:yellow;
+}
+
+.daycell{
+	width:10px;
+	height:14px;
+	font-size:12.5px;
+}
+.cell2{
+	width:10px;
+	height:14px;
+	font-size:12.5px;
+}
+.timings2{
+	display:table-cell;
+	width:15px;
+	height:14px;
+	font-size:12.5px;
+}
+.cellz{
+	display:table-cell;
+	width:10px;
+	height:12px;
+	font-size:11px;
+}
+.timings{
+	display:table-cell;
+	width:15px;
+	height:14px;
+	font-size:12.5px;
+}
+.cell{
+	display:table-cell;
+	width:10px;
+	height:12px;
+	font-size:11px;
+}
+.lunchcell{
+	display:table-cell;
+	width:15px;
+	height:14px;
+	font-size:12.5px;
+}
+.toggle{
+	display:none;
+}
+}

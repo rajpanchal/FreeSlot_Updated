@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="main.css">
+<title>SlotBot</title>
+	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<style type="text/css">
+		.ty{
+			margin: 0px!important;
+			padding: 0px! important;
+		}
+		.tw{
+			top:50%!important;
+			
+			height:500px;
+			
+			margin: -250 -275 ;
+			
+		}
+		body
+		{
+			background-image: url("https://www.planwallpaper.com/static/images/black-and-blue-cubes-wallpaper1.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		::placeholder {
+    		color: black;
+    		opacity: 1; 
+		}
+	</style>
+</head>
+<body>
+
+<!--DETAILS PAGE-->
+
+	<div class="details">
+			<div class="row ty">
+        <div class="col l12 s12 m12 ty">
+          <div class="card blue-grey darken-4 ty">
+            <div class="card-content white-text">
+              <span class="card-title" style="text-align: center; font-style: verdana;">SLOTBOT</span>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+       <div class="row">
+       	<div class="col l3 m1 s1"></div>
+      <div class="col l6 m10 s10">
+        <div class="card-panel  light-blue darken-2 tw ">
+          
+       
+      <div class="row">
+      	
+      	<div class="col l12 m12 s12">
+    
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Full Name"  id="first_name" type="text" class="validate">
+          
+        </div>
+    </div>
+
+    	<div class="row">
+        <div class="input-field col s12">
+          <input id="RegistrationNumber" type="text" class="validate" placeholder="Registration Number">
+          
+        </div>
+      </div>
+
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="last_name" type="text" class="validate" placeholder="Phone Number">
+        </div>
+    </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" placeholder="Email">
+          
+        </div>
+      </div>
+      <p style="color: red; font-size:10px;" id="error"></p>
+      <div class="row">
+      	<center>
+      	<button class="btn waves-effect waves-light grey darken-4 refresh" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+  </center>
+      </div>
+      
+      
+    
+    </div>
+  </div>
+</div>
+ </div>
+      </div>
+	</div>
+
+<!--  TIME TABLE SELECTOR PAGE -->
+
+<div id="wholepage">
+<div id="timetablecontent">
+<!--TIME TABLE-->
+	<table>
+	<tr>
+	<td rowspan="2" class="daycell">Theory</td><td class="cell2">Start</td><td class="timings">08:00</td><td class="timings">09:00</td><td class="timings">10:00</td><td class="timings">11:00</td><td class="timings">12:00</td><td class="timings">-</td><td class="lunchcell">Lunch</td><td class="timings2">14:00</td><td class="timings2">15:00</td><td class="timings2">16:00</td><td class="timings2">17:00</td><td class="timings2">18:00</td><td class="timings2">-</td><td class="timings2">19:00</td><td class="timings2">20:00</td>
+	</tr>
+	<tr>
+	<td class="cell2">End</td><td class="timings">08:50</td><td class="timings">09:50</td><td class="timings">10:50</td><td class="timings">11:50</td><td class="timings">12:50</td><td class="timings">-</td><td class="lunchcell">Lunch</td><td class="timings2">14:50</td><td class="timings2">15:50</td><td class="timings2">16:50</td><td class="timings2">17:50</td><td class="timings2">18:50</td><td class="timings2">-</td><td class="timings2">19:50</td><td class="timings2">20:50</td>
+	</tr>
+	<tr>
+	<td rowspan="2" class="daycell" >Lab</td><td class="cell2">Start</td><td class="timings">08:01</td><td class="timings">08:46</td><td class="timings">10:01</td><td class="timings">10:46</td><td class="timings">11:30</td><td class="timings">12:16</td><td class="lunchcell">Lunch</td><td class="timings2">14:01</td><td class="timings2">14:46</td><td class="timings2">16:01</td><td class="timings2">16:46</td><td class="timings2">18:01</td><td class="timings2">18:46</td><td class="timings2">19:31</td><td class="timings2">20:16</td>
+	</tr>
+	<tr>
+	<td class="cell2">End</td><td class="timings">08:45</td><td class="timings">09:30</td><td class="timings">10:45</td><td class="timings">11:30</td><td class="timings">12:15</td><td class="timings">13:00</td><td class="lunchcell">Lunch</td><td class="timings2">14:45</td><td class="timings2">15:30</td><td class="timings2">16:45</td><td class="timings2">17:30</td><td class="timings2">18:45</td><td class="timings2">19:30</td><td class="timings2">20:15</td><td class="timings2">21:00</td>
+	</tr>
+	
+	<tr>
+	<td class="daycell" rowspan="2">MON</td><td class="cell2">Theory</td>
+	<td id="a1" class="cell" onclick="editable(1)">A1</td>
+	<td id="a2" class="cell" onclick="editable(2)">F1</td>
+	<td id="a3" class="cell"  onclick="editable(3)">D1</td>
+	<td id="a4" class="cell" onclick="editable(4)">TB1</td>
+	<td id="a5" class="cell"  onclick="editable(5)">TG1</td>
+	<td id="a6" class="cell" onclick="editable(6)">-</td>
+	<td class="lunchcell">Lunch</td>
+	<td id="a7" class="cellz" onclick="editable(7)">A2</td>
+	<td id="a8" class="cellz" onclick="editable(8)">F2</td>
+	<td id="a9" class="cellz"  onclick="editable(9)">D2</td>
+	<td id="a10" class="cellz" onclick="editable(10)">TB2</td>
+	<td id="a11" class="cellz" onclick="editable(11)">TG2</td>
+	<td id="a12" class="cellz" onclick="editable(12)">-</td>
+	<td id="a13" class="cellz" onclick="editable(13)">H1</td>
+	<td id="a14" class="cellz" onclick="editable(14)">K1</td>
+	</tr>
+	<tr>
+	<td class="cell2">Lab</td>
+	<td class="cell" id="a101" onclick="editable(101)">L1</td>
+	<td class="cell" id="a102" onclick="editable(102)">L2</td>
+	<td class="cell" id="a103" onclick="editable(103)">L3</td>
+	<td class="cell" id="a104" onclick="editable(104)">L4</td>
+	<td class="cell" id="a105" onclick="editable(105)">L5</td>
+	<td class="cell" id="a106" onclick="editable(106)">L6</td>
+	<td class="lunchcell">Lunch</td>
+	<td class="cellz" id="a107" onclick="editable(107)">L31</td>
+	<td class="cellz" id="a108" onclick="editable(108)">L32</td>
+	<td class="cellz" id="a109" onclick="editable(109)">L33</td>
+	<td class="cellz" id="a110" onclick="editable(110)">L34</td>
+	<td class="cellz" id="a111" onclick="editable(111)">L35</td>
+	<td class="cellz" id="a112" onclick="editable(112)">L36</td>
+	<td class="cellz" id="a113" onclick="editable(113)">L61</td>
+	<td class="cellz" id="a114" onclick="editable(114)">L62</td>
+	</tr>
+	
+	<tr>
+	<td class="daycell" rowspan="2">TUE</td><td class="cell2">Theory</td>
+	<td id="a15" class="cell" onclick="editable(15)">B1</td>
+	<td id="a16" class="cell" onclick="editable(16)">G1</td>
+	<td id="a17" class="cell" onclick="editable(17)">E1</td>
+	<td class="cell" id="a18" onclick="editable(18)">TC1</td>
+	<td class="cell" id="a19"  onclick="editable(19)">TAA1</td>
+	<td class="cell" id="a20"  onclick="editable(20)">-</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a21" onclick="editable(21)">B2</td>
+	<td class="cellz" id="a22"  onclick="editable(22)">G2</td>
+	<td  class="cellz" id="a23" onclick="editable(23)">E2</td>
+	<td class="cellz" id="a24"  onclick="editable(24)">TC2</td>
+	<td  class="cellz" id="a25" onclick="editable(25)">TAA2</td>
+	<td  class="cellz" id="a26" onclick="editable(26)">-</td>
+	<td  class="cellz" id="a27" onclick="editable(27)">H2</td>
+	<td  class="cellz" id="a28" onclick="editable(28)">K2</td>
+	</tr>
+	<tr>
+	<td class="cell2">Lab</td>
+	<td  class="cell" id="a115" onclick="editable(115)">L7</td>
+	<td  class="cell" id="a116" onclick="editable(116)">L8</td>
+	<td class="cell" id="a117"  onclick="editable(117)">L9</td>
+	<td class="cell" id="a118"  onclick="editable(118)">L10</td>
+	<td class="cell" id="a119"  onclick="editable(119)">L11</td>
+	<td class="cell" id="a120"  onclick="editable(120)">L12</td>
+	<td class="lunchcell">Lunch</td>
+	<td class="cellz" id="a121"  onclick="editable(121)">L37</td>
+	<td  class="cellz" id="a122" onclick="editable(122)">L38</td>
+	<td  class="cellz" id="a123" onclick="editable(123)">L39</td>
+	<td  class="cellz" id="a124" onclick="editable(124)">L40</td>
+	<td  class="cellz" id="a125" onclick="editable(125)">L41</td>
+	<td class="cellz" id="a126"  onclick="editable(126)">L42</td>
+	<td  class="cellz" id="a127" onclick="editable(127)">L63</td>
+	<td class="cellz" id="a128"  onclick="editable(128)">L64</td>
+	</tr>
+	
+	<tr>
+	<td class="daycell" rowspan="2">WED</td><td class="cell2">Theory</td>
+	<td class="cell" id="a29"  onclick="editable(29)">D1</td>
+	<td class="cell" id="a30"  onclick="editable(30)">B1</td>
+	<td class="cell" id="a31"  onclick="editable(31)">G1</td>
+	<td class="cell" id="a32"  onclick="editable(32)">TE1</td>
+	<td class="cell" id="a33"  onclick="editable(33)">TCC1</td>
+	<td class="cell" id="a34"  onclick="editable(34)">-</td>
+	<td class="lunchcell">Lunch</td>
+	<td class="cellz" id="a35"  onclick="editable(35)">C2</td>
+	<td class="cellz" id="a36"  onclick="editable(36)">A2</td>
+	<td  class="cellz" id="a37" onclick="editable(37)">F2</td>
+	<td  class="cellz" id="a38" onclick="editable(38)">TD2</td>
+	<td  class="cellz" id="a39" onclick="editable(39)">TB2</td>
+	<td  class="cellz" id="a40" onclick="editable(40)">-</td>
+	<td  class="cellz" id="a41" onclick="editable(41)">H3</td>
+	<td  class="cellz" id="a42" onclick="editable(42)">K3</td>
+	</tr>
+	<tr>
+	<td class="cell2">Lab</td>
+	<td  class="cell" id="a129" onclick="editable(129)">L13</td>
+	<td  class="cell" id="a130" onclick="editable(130)">L14</td>
+	<td  class="cell" id="a131" onclick="editable(131)">L15</td>
+	<td  class="cell" id="a132" onclick="editable(132)">L16</td>
+	<td  class="cell" id="a133" onclick="editable(133)">L17</td>
+	<td  class="cell" id="a134" onclick="editable(134)">L18</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a135" onclick="editable(135)">L43</td>
+	<td  class="cellz" id="a136" onclick="editable(136)">L44</td>
+	<td  class="cellz" id="a137" onclick="editable(137)">L45</td>
+	<td  class="cellz" id="a138" onclick="editable(138)">L46</td>
+	<td  class="cellz" id="a139" onclick="editable(139)">L47</td>
+	<td  class="cellz" id="a140" onclick="editable(140)">L48</td>
+	<td  class="cellz" id="a141" onclick="editable(141)">L65</td>
+	<td  class="cellz" id="a142" onclick="editable(142)">L66</td>
+	</tr>
+
+	<tr>
+	<td class="daycell" rowspan="2">THU</td>
+	<td class="cell2">Theory</td>
+	<td  class="cell" id="a43" onclick="editable(43)">D1</td>
+	<td  class="cell" id="a44" onclick="editable(44)">B1</td>
+	<td  class="cell" id="a45" onclick="editable(45)">G1</td>
+	<td  class="cell" id="a46" onclick="editable(46)">TE1</td>
+	<td  class="cell" id="a47" onclick="editable(47)">TCC1</td>
+	<td  class="cell" id="a48" onclick="editable(48)">-</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a49" onclick="editable(49)">D2</td>
+	<td  class="cellz" id="a50" onclick="editable(50)">B2</td>
+	<td  class="cellz" id="a51" onclick="editable(51)">G2</td>
+	<td  class="cellz" id="a52" onclick="editable(52)">TE2</td>
+	<td  class="cellz" id="a53" onclick="editable(53)">TCC2</td>
+	<td  class="cellz" id="a54" onclick="editable(54)">-</td>
+	<td  class="cellz" id="a55" onclick="editable(55)">H4</td>
+	<td  class="cellz" id="a56" onclick="editable(56)">K4</td>
+	</tr>
+	<tr>
+	<td class="cell2">Lab</td>
+	<td  class="cell" id="a143" onclick="editable(143)">L19</td>
+	<td  class="cell" id="a144" onclick="editable(144)">L20</td>
+	<td  class="cell" id="a145" onclick="editable(145)">L21</td>
+	<td  class="cell" id="a146" onclick="editable(146)">L22</td>
+	<td  class="cell" id="a147" onclick="editable(147)">L23</td>
+	<td  class="cell" id="a148" onclick="editable(148)">L24</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a149" onclick="editable(149)">L49</td>
+	<td  class="cellz" id="a150" onclick="editable(150)">L50</td>
+	<td  class="cellz" id="a151" onclick="editable(151)">L51</td>
+	<td  class="cellz" id="a152" onclick="editable(152)">L52</td>
+	<td  class="cellz" id="a153" onclick="editable(153)">L53</td>
+	<td  class="cellz" id="a154" onclick="editable(154)">L54</td>
+	<td  class="cellz" id="a155" onclick="editable(155)">L67</td>
+	<td  class="cellz" id="a156" onclick="editable(156)">L68</td>
+	</tr>
+	
+	<tr>
+	<td class="daycell" rowspan="2">FRI</td><td class="cell2">Theory</td>
+	<td  class="cell" id="a57" onclick="editable(57)">E1</td>
+	<td  class="cell" id="a58" onclick="editable(58)">C1</td >
+	<td  class="cell" id="a59" onclick="editable(59)">TA1</td>
+	<td  class="cell" id="a60" onclick="editable(60)">TF1</td>
+	<td  class="cell" id="a61" onclick="editable(61)">TD1</td>
+	<td  class="cell" id="a62" onclick="editable(62)">-</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a63" onclick="editable(63)">E2</td>
+	<td  class="cellz" id="a64" onclick="editable(64)">C2</td>
+	<td  class="cellz" id="a65" onclick="editable(65)">TA2</td>
+	<td  class="cellz" id="a66" onclick="editable(66)">TF2</td>
+	<td  class="cellz" id="a67" onclick="editable(67)">TDD2</td>
+	<td  class="cellz" id="a68" onclick="editable(68)">-</td>
+	<td  class="cellz" id="a69" onclick="editable(69)">H5</td>
+	<td  class="cellz" id="a70" onclick="editable(70)">K5</td>
+	</tr>
+	<tr>
+	<td class="cell2">Lab</td>
+	<td  class="cell" id="a157" onclick="editable(157)">L25</td>
+	<td  class="cell" id="a158" onclick="editable(158)">L26</td>
+	<td  class="cell" id="a159" onclick="editable(159)">L27</td>
+	<td  class="cell" id="a160" onclick="editable(160)">L28</td>
+	<td  class="cell" id="a161" onclick="editable(161)">L29</td>
+	<td  class="cell" id="a162" onclick="editable(162)">L30</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a163" onclick="editable(163)">L55</td>
+	<td  class="cellz" id="a164" onclick="editable(164)">L56</td>
+	<td  class="cellz" id="a165" onclick="editable(165)">L57</td>
+	<td  class="cellz" id="a166" onclick="editable(166)">L58</td>
+	<td  class="cellz" id="a167" onclick="editable(167)">L59</td>
+	<td  class="cellz" id="a168" onclick="editable(168)">L60</td>
+	<td  class="cellz" id="a169" onclick="editable(169)">L69</td>
+	<td  class="cellz" id="a170" onclick="editable(170)">L70</td>
+	</tr>
+	
+	<tr>
+	<td class="daycell" rowspan="2">SAT</td><td class="cell2">Theory</td>
+	<td  class="cell" id="a71" onclick="editable(71)">E1</td>
+	<td  class="cell" id="a72" onclick="editable(72)">C1</td>
+	<td  class="cell" id="a73" onclick="editable(73)">TA1</td>
+	<td  class="cell" id="a74" onclick="editable(74)">TF1</td>
+	<td  class="cell" id="a75" onclick="editable(75)">TD1</td>
+	<td  class="cell" id="a76" onclick="editable(76)">-</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a77" onclick="editable(77)">E2</td>
+	<td  class="cellz" id="a78" onclick="editable(78)">C2</td>
+	<td  class="cellz" id="a79" onclick="editable(79)">TA2</td>
+	<td  class="cellz" id="a80" onclick="editable(80)">TF2</td>
+	<td  class="cellz" id="a81" onclick="editable(81)">TDD2</td>
+	<td  class="cellz" id="a82" onclick="editable(82)">-</td>
+	<td  class="cellz" id="a83" onclick="editable(83)">H5</td>
+	<td  class="cellz" id="a84" onclick="editable(84)">K5</td>
+	</tr>
+	<tr>
+	<td class="cell2">Lab</td>
+	<td  class="cell" id="a171" onclick="editable(171)">L25</td>
+	<td  class="cell" id="a172" onclick="editable(172)">L26</td>
+	<td  class="cell" id="a173" onclick="editable(173)">L27</td>
+	<td  class="cell" id="a174" onclick="editable(174)">L28</td>
+	<td  class="cell" id="a175" onclick="editable(175)">L29</td>
+	<td  class="cell" id="a176" onclick="editable(176)">L30</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a177" onclick="editable(177)">L55</td>
+	<td  class="cellz" id="a178" onclick="editable(178)">L56</td>
+	<td  class="cellz" id="a179" onclick="editable(179)">L57</td>
+	<td  class="cellz" id="a180" onclick="editable(180)">L58</td>
+	<td  class="cellz" id="a181" onclick="editable(181)">L59</td>
+	<td  class="cellz" id="a182" onclick="editable(182)">L60</td>
+	<td  class="cellz" id="a183" onclick="editable(183)">L69</td>
+	<td  class="cellz" id="a184" onclick="editable(184)">L70</td>
+	</tr>
+	
+	<tr>
+	<td class="daycell" rowspan="2">SUN</td><td class="cell2">Theory</td>
+	<td  class="cell" id="a85" onclick="editable(85)">E1</td>
+	<td  class="cell" id="a86" onclick="editable(86)">C1</td>
+	<td  class="cell" id="a87" onclick="editable(87)">TA1</td>
+	<td  class="cell" id="a88" onclick="editable(88)">TF1</td>
+	<td  class="cell" id="a89" onclick="editable(89)">TD1</td>
+	<td  class="cell" id="a90" onclick="editable(90)">-</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a91" onclick="editable(91)">E2</td>
+	<td  class="cellz" id="a92" onclick="editable(92)">C2</td>
+	<td  class="cellz" id="a93" onclick="editable(93)">TA2</td>
+	<td  class="cellz" id="a94" onclick="editable(94)">TF2</td>
+	<td  class="cellz" id="a95" onclick="editable(95)">TDD2</td>
+	<td  class="cellz" id="a96" onclick="editable(96)">-</td>
+	<td  class="cellz" id="a97" onclick="editable(97)">H5</td>
+	<td  class="cellz" id="a98" onclick="editable(98)">K5</td>
+	</tr>
+	<tr>
+	<td class="cell2">Lab</td>
+	<td  class="cell" id="a185" onclick="editable(185)">L25</td>
+	<td  class="cell" id="a186" onclick="editable(186)">L26</td>
+	<td  class="cell" id="a187" onclick="editable(187)">L27</td>
+	<td  class="cell" id="a188" onclick="editable(188)">L28</td>
+	<td  class="cell" id="a189" onclick="editable(189)">L29</td>
+	<td  class="cell" id="a190" onclick="editable(190)">L30</td>
+	<td class="lunchcell">Lunch</td>
+	<td  class="cellz" id="a191" onclick="editable(191)">L55</td>
+	<td  class="cellz" id="a192" onclick="editable(192)">L56</td>
+	<td  class="cellz" id="a193" onclick="editable(193)">L57</td>
+	<td  class="cellz" id="a194" onclick="editable(194)">L58</td>
+	<td  class="cellz" id="a195" onclick="editable(195)">L59</td>
+	<td  class="cellz" id="a196" onclick="editable(196)">L60</td>
+	<td  class="cellz" id="a197" onclick="editable(197)">L69</td>
+	<td class="cellz" id="a198"  onclick="editable(198)">L70</td>
+	</tr>
+	</table>
+</div>
+
+<button id="post">Submit</button>
+
+<button class="toggle" id="toggle" onclick="changeview()">Change</button>
+
+<!--MODAL-->
+<div>
+
+</div>
+</div>
+
+<div id="result" style="display:none; color: white;">
+	<h1>Your data has been successfully sent! Thank you.</h1>
+	<a href="index.html">
+   		<button>BACK</button>
+ 	</a>
+</div>
+
+<script>
+var l=[]
+function editable(str){
+if(window.l.includes(str)){
+var x=window.l.indexOf(str);
+if(x>-1){
+document.getElementById("a"+str).classList.remove("active");
+window.l.splice(x,1);
+}
+
+}
+else{
+window.l.push(str)
+document.getElementById("a"+str).className+=" active";
+
+}
+}
+function popup(){
+	
+}
+/*Changing layout if mobile*/
+function changeview(){
+	if(document.getElementsByClassName('cellz')[0].style.display==='table-cell'){
+	console.log(1);
+		var el=document.getElementsByClassName('cellz');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="none";
+		}
+		var el=document.getElementsByClassName('cell');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="table-cell";
+		}
+		var el=document.getElementsByClassName('timings2');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="none";
+		}
+		var el=document.getElementsByClassName('timings');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="table-cell";
+		}
+		var el=document.getElementsByClassName('lunchcell');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="table-cell";
+		}
+		var el=document.getElementsByClassName('cell2');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="table-cell";
+		}
+	}
+	else{
+		var el=document.getElementsByClassName('cellz');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="table-cell";
+		}
+		var el=document.getElementsByClassName('cell');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="none";
+		}
+		var el=document.getElementsByClassName('timings2');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="table-cell";
+		}
+		var el=document.getElementsByClassName('timings');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="none";
+		}
+		var el=document.getElementsByClassName('lunchcell');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="none";
+		}
+		var el=document.getElementsByClassName('cell2');
+		for(var i=0;i<el.length;i++){
+			el[i].style.display="none";
+		}
+	
+	}
+}
+</script>
+
+<script type="text/javascript">
+	$(".refresh").on("click",function(){
+		var firstName = first_name.value;
+		var lastName = last_name.value;
+		var regNo = RegistrationNumber.value;
+		var emailAdd = email.value;
+
+		if(firstName != "" && lastName != "" && regNo!="" && emailAdd != ""){ 
+			$(".details").css("display","none");	
+			$("#wholepage").css("display","block");	
+			}
+		else{
+			document.getElementById("error").innerHTML = "Please fill out all fields";
+		}
+
+		var selectedSlot = {};
+		selectedSlot["name"] = firstName;
+		selectedSlot["reg"] = regNo;
+		selectedSlot["phno"] = lastName;
+		selectedSlot["email"] = emailAdd;		
+
+		$("#post").on("click",function(req, res){
+		console.log(firstName);
+		
+		selectedSlot["slot"] = l;
+		console.log(selectedSlot);
+		$.ajax({
+			type: 'POST',
+			url: 'https://slotfree.herokuapp.com/postreq',
+			data: selectedSlot,
+			success: function(data){
+				if(data.status == 1){
+					console.log("Posted successfully!");
+				}
+				else{
+					alert("Entry already exists! Y in the world u gave details all over again :(");
+				}
+			},
+			error: function(){
+				console.log("Unsuccessful!");
+			}
+
+		});
+
+		$("#wholepage").css("display","none");
+		$("#result").css("display","block");
+
+});
+		
+});
+</script>
+
+<script type="text/javascript">
+
+</script>
+
+
+
+</body>
+</html>
